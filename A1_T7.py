@@ -8,4 +8,3 @@ concumption_per_km = float(FuelUsage) / float(Distance)
 Consumption = int(concumption_per_km * 100)
 
 print("Fuel consumption is {Consumption} l per 100 km".format(Consumption=Consumption))
-
