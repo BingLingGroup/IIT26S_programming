@@ -11,6 +11,7 @@ while i < 7:
     sum = sum + time_list[i]
     i = i + 1
 
+average = sum / i
 print("\nIn total you spent {sum} minutes on programming.".format(sum=sum))
-print("Average per task was {average:.2f} min and same rounded to the nearest integer {rounded} min.\n".format(average=sum / i, rounded=sum // i))
+print("Average per task was {average} min and same rounded to the nearest integer {rounded} min.\n".format(average=round(average, 2), rounded=round(average)))
 print("Program ending.")
