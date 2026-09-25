@@ -20,5 +20,5 @@ if sum % 2:
     print("Sum is Odd.")
 else:
     print("Sum is even.")
-    
+
 print("Program ending.")
