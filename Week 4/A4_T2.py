@@ -4,7 +4,9 @@ start_value = int(input("Insert starting value: "))
 end_value = int(input("Insert stopping value: ")) + 1
 
 print("\nStarting for-loop:")
+output_list = []
 for i in range(start_value, end_value):
-    print(i, end=' ')
+    output_list.append("{value}".format(value=i))
 
-print("\n\nProgram ending.")
+print(" ".join(output_list))
+print("\nProgram ending.")
