@@ -5,10 +5,10 @@ end_value = int(input("Insert stopping value: ")) + 1
 
 print("\nStarting while-loop:")
 i = 1
-output_list = []
+if start_value < end_value:
+    print(start_value, end="")
 while i < end_value:
-    output_list.append("{value}".format(value=i))
+    print(" {value}".format(value=i), end="")
     i = i + 1
 
-print(" ".join(output_list))
-print("\nProgram ending.")
+print("\n\nProgram ending.")

@@ -4,9 +4,9 @@ start_value = int(input("Insert starting value: "))
 end_value = int(input("Insert stopping value: ")) + 1
 
 print("\nStarting for-loop:")
-output_list = []
-for i in range(start_value, end_value):
-    output_list.append("{value}".format(value=i))
+if start_value < end_value:
+    print(start_value, end="")
+for i in range(start_value + 1, end_value):
+    print(" {value}".format(value=i), end="")
 
-print(" ".join(output_list))
-print("\nProgram ending.")
+print("\n\nProgram ending.")

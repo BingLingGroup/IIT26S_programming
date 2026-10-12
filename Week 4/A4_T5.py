@@ -19,29 +19,29 @@ if inspection > stop or inspection < start:
 if loop_condition:
     print("First loop - inspection with break:")
     i = start
-    output_list = []
-    while loop_condition and i < stop:
-        if i == inspection:
-            break
-        output_list.append("{value}".format(value=i))
+    if i != inspection:
+        print(i, end="")
         i = i + 1
-    if output_list:
-        print(" ".join(output_list))
-    else:
-        print()
+        while i < stop:
+            if i == inspection:
+                break
+            print(" {value}".format(value=i), end="")
+            i = i + 1
 
-    print("Second loop - inspection with continue:")
+    print("\nSecond loop - inspection with continue:")
     i = start
-    output_list = []
-    while loop_condition and i < stop:
+    if i != inspection:
+        print(i, end="")
+    else:
+        i = i + 1
+        print(i, end="")
+    i = i + 1
+    while i < stop:
         if i == inspection:
             i = i + 1
             continue
-        output_list.append("{value}".format(value=i))
+        print(" {value}".format(value=i), end="")
         i = i + 1
-    if output_list:
-        print(" ".join(output_list))
-    else:
-        print()
+    print()
 
 print("\nProgram ending.")
