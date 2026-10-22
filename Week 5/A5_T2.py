@@ -5,6 +5,7 @@ def frameWord(PWord):
     print(padding)
     return None
 
+
 def main():
     print("Program starting.")
     word = input("Insert word: ")
@@ -12,5 +13,6 @@ def main():
     frameWord(word)
     print("\nProgram ending.")
     return None
-    
+
+
 main()
