@@ -1,11 +1,6 @@
-import os
-
-HERE = os.path.abspath(os.path.dirname(__file__))
-
-
 def read_file(filename: str) -> str:
     content = ''
-    with open(os.path.join(HERE, filename), encoding="utf-8", mode="r") as input_file:
+    with open(filename, encoding="utf-8", mode="r") as input_file:
         line = input_file.readline()
         while line != "":
             content += line
