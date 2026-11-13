@@ -1,6 +1,7 @@
 def write_file(filename: str, content: str) -> None:
     with open(filename, encoding="utf-8", mode="w") as output_file:
         output_file.write(content)
+    return None
 
 
 def main():
@@ -12,6 +13,7 @@ def main():
                content="{first_name}\n{last_name}\n".format(
                    first_name=first_name, last_name=last_name))
     print("Program ending.")
+    return None
 
 
 main()
