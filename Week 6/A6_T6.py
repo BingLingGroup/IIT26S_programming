@@ -80,12 +80,10 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 def shiftCharacter(
         char: str,
         alphabets: str) -> str:
-    if alphabets == LOWER_ALPHABETS:
-        offset = ord(char) - ord("a")
-        result = chr((offset + 13) % 26 + ord("a"))
-    elif alphabets == UPPER_ALPHABETS:
-        offset = ord(char) - ord("A")
-        result = chr((offset + 13) % 26 + ord("A"))
+    if char in alphabets:
+        index = alphabets.index(char)
+        shifted_index = (index + 13) % len(alphabets)
+        result =  alphabets[shifted_index]
     else:
         result = char
     return result
