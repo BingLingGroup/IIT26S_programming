@@ -9,8 +9,10 @@ EMPERORS = ["Galba", "Otho", "Vitellius", "Vespasian"]
 def decipher_text(state: dict) -> None:
     ciphered_filename = "{next}_{passphrase}.gkg".format(
         next=state["next_location"], passphrase=state["passphrase"])
+    ciphered_filename = os.path.join(HERE, ciphered_filename)
     plain_filename = "{next}_{plaintext}.txt".format(
         next=state["next_location"], plaintext=state["plain_text"])
+    plain_filename = os.path.join(HERE, plain_filename)
     with open(ciphered_filename, encoding="utf-8", mode="r") as input_file:
         state["appended"] = input_file.readline()
         ciphered_content = input_file.read()
@@ -38,7 +40,7 @@ def write_progress(filename: str, content: dict) -> None:
 
 
 def name_prcs(name: str) -> str:
-    if not name.endswith('s'):
+    if not name.endswith("s"):
         return "{name}'s".format(name=name)
     else:
         return "{name}'".format(name=name)
@@ -55,7 +57,7 @@ def game_ops(state: dict) -> None:
 Looking for the message in the palace...
 Ah, there it is! Seems cryptic.""".format(passphrase=state["plain_text"].capitalize()))
     decipher_text(state)
-    write_progress(filename="player_progress.txt",
+    write_progress(filename=os.path.join(HERE, "player_progress.txt"),
                    content=state)
     print("[Game] Progress autosaved!")
     print("""Deciphering Emperor's message...
@@ -79,7 +81,7 @@ def main():
         print("...Arriving home")
         current_state["plain_text"] = codecs.decode(current_state["passphrase"], "rot13")
         decipher_text(current_state)
-        write_progress(filename="player_progress.txt",
+        write_progress(filename=os.path.join(HERE, "player_progress.txt"),
                        content=current_state)
         print("[Game] Progress autosaved!")
         print("Time to leave...")
