@@ -110,9 +110,12 @@ Enigma initialized.""")
     while row:
         converted_row = ""
         for char in row:
-            char_out = enigma_encrypt(char=char.upper(),
-                                      configs=configs,
-                                      positions=positions)
+            if char.isalpha():
+                char_out = enigma_encrypt(char=char.upper(),
+                                          configs=configs,
+                                          positions=positions)
+            else:
+                char_out = char
             print("Character \"{char_in}\" illuminated as \"{char_out}\"".format(
                 char_in=char,
                 char_out=char_out))
