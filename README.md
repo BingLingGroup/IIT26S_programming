@@ -13,3 +13,5 @@ A repo used for my programming course.
 - [Python_programming_W5_7](https://github.com/BingLingGroup/Python_programming_W5_7)
 - [Python_programming_W6_5](https://github.com/BingLingGroup/Python_programming_W6_5)
 - [Python_programming_W6_6](https://github.com/BingLingGroup/Python_programming_W6_6)
+- [Python_programming_W7_4](https://github.com/BingLingGroup/Python_programming_W7_4)
+- [Python_programming_W7_5](https://github.com/BingLingGroup/Python_programming_W7_5)
