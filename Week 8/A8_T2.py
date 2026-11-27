@@ -1,4 +1,5 @@
-import my_calculator
+import myCalculator
+import inputChoice
 
 
 def main() -> None:
@@ -39,17 +40,10 @@ def showOptions() -> None:
 
 
 def askChoice() -> int:
-    choice_str = input("Your choice: ")
-    try:
-        choice = int(choice_str)
-        if choice > 4 or choice < 0:
-            choice = -1
-    except ValueError:
-        choice = -1
-    return choice
+    return inputChoice.process_input(min=0, max=4)
 
 
-def askValue(PPrompt: str) -> float:
+def askValue(PPrompt: str):
     if PPrompt == "add":
         value1 = float(input("Insert first addend value: "))
         value2 = float(input("Insert second addend value: "))
@@ -70,7 +64,7 @@ def askValue(PPrompt: str) -> float:
         value2 = float(input("Insert divisor value: "))
         print("{value1:.1f} / {value2:.1f} = ".format(value1=value1,
                                                       value2=value2), end="")
-    calculate = getattr(my_calculator, PPrompt)
+    calculate = getattr(myCalculator, PPrompt)
     try:
         result = calculate(value1, value2)
     except ZeroDivisionError:

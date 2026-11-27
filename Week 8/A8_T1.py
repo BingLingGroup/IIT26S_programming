@@ -1,4 +1,5 @@
 from time import sleep
+import inputChoice
 
 
 def print_options():
@@ -9,23 +10,12 @@ def print_options():
     return None
 
 
-def process_input():
-    choice_str = input("Your choice: ")
-    try:
-        choice = int(choice_str)
-        if choice > 2 or choice < 0:
-            choice = -1
-    except ValueError:
-        choice = -1
-    return choice
-
-
 def main():
     print("Program starting.")
     duration = None
     while True:
         print_options()
-        choice = process_input()
+        choice = inputChoice.process_input(min=0, max=2)
         if choice == 1:
             duration = float(input("Insert pause duration (s): "))
         elif choice == 2:
@@ -43,7 +33,7 @@ Set pause first.""")
             print()
             break
         print()
-        
+
     print("Program ending.")
     return None
 
